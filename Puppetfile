@@ -1,3 +1,3 @@
 forge "https://forgeapi.puppetlabs.com"
 
-mod 'puppetlabs-httpd'
+mod 'puppetlabs-apache'
