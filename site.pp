@@ -1,0 +1,6 @@
+
+node /.*/ {
+
+  class { 'apache': }
+
+}
