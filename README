@@ -1,2 +1,5 @@
 
 Simple r10k control repository
+
+ # r10k -c r10k.yaml deploy environment master --puppetfile -v
+
