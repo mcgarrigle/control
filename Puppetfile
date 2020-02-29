@@ -1,6 +1,7 @@
 forge "https://forgeapi.puppetlabs.com"
 
 mod 'puppetlabs-stdlib'
+mod 'puppetlabs-concat'
 mod 'puppetlabs-limits'
 mod 'puppetlabs-apache', '5.4.0'
 
