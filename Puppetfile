@@ -22,9 +22,6 @@ mod "herculesteam-augeasproviders_sysctl",
 :git => "https://github.com/hercules-team/augeasproviders_sysctl.git",
 :tag => '2.1.0'
 
-mod 'shearn89-toughen',
-:git => "https://github.com/mcgarrigle/puppet-toughen.git"
-
 mod 'puppetlabs-limits',
 :git => "https://github.com/puppetlabs/puppetlabs-limits.git",
 :tag => '0.1.0'
