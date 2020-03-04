@@ -1,6 +1,7 @@
 
-node /.*/ {
+node default {
 
-  class { 'apache': }
+  include apache
+  include rsyslog::server
 
 }
