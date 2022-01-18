@@ -1,0 +1,2 @@
+---
+profile::docker::host::version: '20.10.12'

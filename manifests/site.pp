@@ -1,7 +1,7 @@
 
 node default {
 
-  include apache
-  include rsyslog::server
+  $role = $pp_role
+  class { $role: }
 
 }

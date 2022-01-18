@@ -1,0 +1,12 @@
+---
+profile::docker::containers:
+  webserver:
+    image: httpd
+    restart_service: true
+    pull_on_start: true
+  registry:
+    image: registry:2
+    ports:
+    - '5000:5000'
+    restart_service: true
+    pull_on_start: true

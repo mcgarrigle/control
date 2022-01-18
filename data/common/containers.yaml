@@ -1,0 +1,6 @@
+---
+profile::docker::containers:
+  webserver:
+    image: httpd
+    restart_service: true
+    pull_on_start: true

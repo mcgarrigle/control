@@ -4,5 +4,9 @@ defaults:
   data_hash: yaml_data
 
 hierarchy:
+
+  - name: "per-node data"
+    path: "nodes/%{fqdn}.yaml"  # 
+
   - name: "common data"
     glob: "common/**/*.yaml"
