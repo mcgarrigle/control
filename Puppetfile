@@ -7,7 +7,8 @@ mod 'puppetlabs-limits'
 mod 'puppetlabs-apache', '5.4.0'
 mod 'puppet-rsyslog',    '4.0.0'
 mod 'puppetlabs-docker', 'v4.1.2'
-mod 'puppetlabs-inifil', 'v5.2.0'
+mod 'mmckinst-hash2stuff', 'v1.2.1'
+
 
 mod 'camptocamp-kmod',
 :git => 'https://github.com/camptocamp/puppet-kmod.git',
