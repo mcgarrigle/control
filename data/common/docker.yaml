@@ -1,2 +1,6 @@
 ---
 profile::docker::host::version: '20.10.12'
+# profile::docker::host::registry: '192.168.2.31:5000'
+# profile::docker::host::email:
+# profile::docker::host::username: x
+# profile::docker::host::password: x

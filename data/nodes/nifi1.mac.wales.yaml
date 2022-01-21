@@ -1,12 +1,73 @@
 ---
 profile::docker::containers:
   webserver:
-    image: httpd
-    restart_service: true
+    image: 'httpd'
+    restart_service: false
+    pull_on_start: true
+  webserver2:
+    image: 'nifi1.mac.wales:5000/httpd'
+    restart_service: false
+    pull_on_start: true
+  nexus:
+    image: 'sonatype/nexus3:latest'
+    ports:
+    - '8081:8081'
+    - '5000:5000'
+    - '5001:5001'
+    restart_service: false
     pull_on_start: true
   registry:
+    ensure: absent
     image: registry:2
+    volumes:
+    - '/etc/docker-registry.yaml:/etc/docker/registry/config.yml'
+    - '/etc/pki/tls:/etc/pki/tls'
     ports:
     - '5000:5000'
-    restart_service: true
+    restart_service: false
     pull_on_start: true
+
+profile::config_files:
+  "/etc/docker-registry.yaml":
+    content:
+      version: 0.1
+      log:
+        fields:
+          service: registry
+      storage:
+        cache:
+          blobdescriptor: inmemory
+        filesystem:
+          rootdirectory: /var/lib/registry
+      http:
+        addr: ':5000'
+        headers:
+          X-Content-Type-Options: [nosniff]
+        tls:
+          certificate: /etc/pki/tls/certs/nifi1.mac.wales.crt
+          key: /etc/pki/tls/private/nifi1.mac.wales.pem
+          clientcas:
+          - /etc/pki/tls/certs/nifi1.mac.wales.crt
+      auth:
+        silly:
+          realm: silly-realm
+          service: silly-service
+      health:
+        storagedriver:
+          enabled: true
+          interval: 10s
+          threshold: 3
+  "/etc/foo.conf":
+    content:
+      a: 1
+      b: 2
+      c: 3
+  "/etc/bar.conf":
+    format: inifile
+    content:
+      header1:
+        a: 1
+        b: 2
+      header2:
+        c: 3
+        d: 4
