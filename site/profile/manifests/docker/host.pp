@@ -21,4 +21,6 @@ class profile::docker::host(
       password => $password,
     }
   }
+
+  Profile::Docker::Swarm::Worker <<| tag == $facts['networking']['ip'] |>>
 }

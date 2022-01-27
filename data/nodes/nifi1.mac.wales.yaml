@@ -4,10 +4,6 @@ profile::docker::containers:
     image: 'httpd'
     restart_service: false
     pull_on_start: true
-  webserver2:
-    image: 'nifi1.mac.wales:5000/httpd'
-    restart_service: false
-    pull_on_start: true
   nexus:
     image: 'sonatype/nexus3:latest'
     ports:
