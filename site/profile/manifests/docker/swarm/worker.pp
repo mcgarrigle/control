@@ -4,5 +4,6 @@ define profile::docker::swarm::worker(
   String $token,
 )
 {
-  notify { "${manager_ip} ${token}": }
+  $worker_ip = $facts['networking']['ip']
+  notify { "swarm worker ${worker_ip} ${manager_ip} ${token}": }
 }
