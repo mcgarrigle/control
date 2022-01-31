@@ -9,7 +9,7 @@ class profile::docker::host(
 ) {
 
   class { 'docker': 
-     version => $version,
+     version                     => $version,
      use_upstream_package_source => $use_upstream_package_source,
   }
 
@@ -21,6 +21,4 @@ class profile::docker::host(
       password => $password,
     }
   }
-
-  # Profile::Docker::Swarm::Node <<| tag == $facts['networking']['ip'] |>>
 }
