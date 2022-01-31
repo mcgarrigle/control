@@ -25,7 +25,7 @@ class profile::docker::swarm (
       $label = regsubst($manager, '\.', '-', 'G')
       @@profile::docker::swarm::node { "manager-${label}":
         manager_ip => $primary_ip,
-        token      => 'manager token',
+        token      => $facts['docker_manager_join_token'],
         tag        => $manager,
       }
     }
@@ -34,7 +34,7 @@ class profile::docker::swarm (
       $label = regsubst($worker, '\.', '-', 'G')
       @@profile::docker::swarm::node { "worker-${label}":
         manager_ip => $primary_ip,
-        token      => 'worker token',
+        token      => $facts['docker_worker_join_token'],
         tag        => $worker,
       }
     }
