@@ -1,9 +1,12 @@
 ---
 profile::docker::host::version: '20.10.12'
+
 # profile::docker::host::registry: '192.168.2.31:5000'
 # profile::docker::host::email:
 # profile::docker::host::username: x
 # profile::docker::host::password: x
+
 profile::docker::swarm::nodes:
-- 192.168.2.32
-- 192.168.2.33
+  192.168.2.31: primary
+  192.168.2.32: manager
+  192.168.2.33: worker

@@ -22,5 +22,5 @@ class profile::docker::host(
     }
   }
 
-  Profile::Docker::Swarm::Worker <<| tag == $facts['networking']['ip'] |>>
+  # Profile::Docker::Swarm::Node <<| tag == $facts['networking']['ip'] |>>
 }
